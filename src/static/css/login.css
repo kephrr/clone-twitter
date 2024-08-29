@@ -1,0 +1,126 @@
+@import url('../font/webkit/stylesheet.css');
+
+*{
+    font-family: 'chirpbold';
+}
+.context{
+    background-color: rgb(31, 36, 44);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    width: 50vw;
+    height: 90vh;
+    border-radius: 3%;
+}
+.scroll{
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 0 25% 0 25%;
+}
+
+.white{
+    color: white;
+}
+.main_scroll{
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-around;*/
+    min-height: 60vh;
+}
+
+.input{
+    height: 6.5vh;
+    border-radius: 50px;
+    border: grey solid 1px;
+    background-color: transparent;
+
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    margin-bottom: 10px;
+    color: white;
+}
+
+button{
+    margin-top: 10px;
+    font-size: 16px
+}
+
+button{
+    height: 6.5vh;
+    border-radius: 50px;
+    border: white solid 1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+button, #input{
+    margin-bottom: 10px;
+}
+button{
+    margin-top: 10px;
+    font-size: 16px
+}
+.transparent{
+    background-color: black;
+}
+
+#logo{
+    width: 5vw;
+}
+#cross{
+    width: 2vw;
+    margin:2vh 45vw 0 0;
+}
+
+.icon{
+    width: 2vw;
+    margin-right: 10px;
+}
+
+#input{
+    height: 10vh;
+    font-size: 18px;
+    font-family: 'chirpregular';
+    border: solid gray 1.5px;
+    border-radius: 7px;
+    background-color: black;
+}
+#input:focus{
+    color: white;
+}
+
+h4, #forget{
+    align-content: center;
+    text-align: center;
+    font-family: 'chirpregular';
+    font-weight: normal;
+    color: gray;
+}
+
+#forget{
+    margin-top: 10px;
+}
+a{
+    color: #1d9bf0;
+    font-family: 'chirpregular';
+    text-decoration: none;
+}
+p{
+    font-family: 'chirpregular';
+    color: gray;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+.text-gray{
+    color: #383838;
+}

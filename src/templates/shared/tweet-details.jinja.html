@@ -1,0 +1,61 @@
+
+{% block ownCss %}
+      <link rel="stylesheet" href="../../static/css/tweet-details.css">
+{% endblock %}
+
+{% block content %}
+<div class="cardTweetType">
+      <div class="post">
+            <img onclick="history.back()" src="../../static/img/backw.png" alt="">
+            <h1>Tweet</h1>
+      </div>
+      <div class="fullname">
+            <img class="profilePic" src="{{author['pp_url']}}" alt="">
+            <div class="tweet_user">
+                  <div class="username">
+                        <h3>{{author['name']}}</h3>
+                        <img src="../../static/img/verified_icon.png" alt="">
+                  </div>
+                  <p class="pseudo">{{author['username']}}</p>
+            </div>
+      </div>
+      <div class="content">
+            <p class="textContent">{{subject['content']}} </p>
+            <p > {{date}}</p>
+            <div class="actions actions-detail">
+                  <div >
+                      <p></p>
+                        <img src="../../static/img/icons8-comment-144.png" alt="">
+                      </a>
+                  </div>
+                  <div>
+                      <p></p>
+                      <img class="like" src="../../static/img/unliked_icon.svg" alt="">
+                  </div>
+                  <div>
+                      <p></p>
+                      <img class="retweet" src="../../static/img/icons8-retweet-48.png" alt="">
+                  </div>
+                  <div>
+                      <p></p>
+                      <img class="bookmark" src="../../static/img/bookmark_icon.svg" alt="">
+                  </div>
+                  <img src="../../static/img/icons8-upload-64 (1).png" alt="">
+            </div>
+            <form method="post" action="/tweet-details/add-comment" class="user_typing">
+                  {% if current_user['pp_url']!='' %}
+                  <img class="profilePic" src="{{current_user['pp_url']}}" alt="jd">
+                  {% else  %}
+                  <img class="profilePic" src="../../static/img/no_pp.png" alt="jd">
+                  {% endif  %}
+                  <input id="commentDetailsInput" class="text-grey" name="content" type="text" placeholder="Postez votre réponse">
+                  <button id="commentDetailsBtn" type="submit">Répondre</button>
+                  <input type="hidden" name="id_user" value="{{current_user['id']}}">
+                  <input type="hidden" name="id_tweet" value="{{id_tweet}}">
+            </form>
+      </div>
+      {% for item in comments %}
+            {% include "shared/comment.jinja.html" %}
+      {% endfor %} 
+</div>
+{% endblock %}

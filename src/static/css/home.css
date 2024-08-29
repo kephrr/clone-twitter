@@ -1,0 +1,472 @@
+@import url('../font/webkit/stylesheet.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --twitter-color: #1d9bf0;
+    --twitter-dark-background:#16181c;
+    --twitter-background: #000000;
+    --twitter-select:#333333;
+    --white : white;
+    --light-grey:#71767b;
+}
+
+
+
+.liked{
+    color: #fa052a;
+}
+.retweeted{
+    color: rgb(0, 223, 85);
+}
+.side{
+    height: 100vh;
+}
+.feed{
+    border: solid 1px var(--twitter-select);
+    width: 52.5vw;
+    border-top: none;
+    border-bottom: none;
+
+}
+.second{
+    width: 25vw;
+}
+
+.topBar{
+    width: 52.4vw;
+    height: 9.5vh;
+    
+    border-bottom: var(--twitter-select) solid 1px;
+    border-right: var(--twitter-select) solid 1px;
+    background-color: var(--twitter-background);
+
+
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+}
+#settingShortcut:hover, #optionTopBar div:hover{
+    background-color: var(--twitter-select);
+}
+
+#optionTopBar{
+    flex: 9;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#optionTopBar div.onglet{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 50%;
+    height: 100%;
+}
+.optionPage{
+    color: var(--white);
+    text-align: center;
+    cursor:default;
+}
+#actual-span{
+    background-color: var(--twitter-color);
+    width: 50%;
+    height: 5%;
+}
+
+#unactual .optionPage{
+    color: var(--light-grey);
+    font-family: 'chirpregular';
+}
+
+#settingShortcut{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+#settingShortcut img{
+    width: 2.5vw;
+}
+
+
+.tweetBoxTop{
+    height: 22vh;
+    border-bottom: solid 1px var(--twitter-select);
+    display: flex;
+
+    margin-top: 10vh;
+}
+.profileTweet{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profileTweet img{
+    width:4vw;
+    border-radius: 50%;
+    
+}
+.profileTweet img{
+    margin-top: 20%;
+}
+
+.tweetBoxTopContent{
+    flex: 8;
+}
+.tweetBoxTopContent input[type="text"]:focus, .searcherWidget input[type="text"]:focus{
+    border: none;
+    outline: none;
+}
+.tweetBoxTopContent input[type="text"]{
+    font-family: 'chirpmedium';
+    color: var(--light-grey);
+    font-size: 18px;
+
+    background-color: var(--twitter-background);
+    border: none;
+
+    width: 80%;
+    height: 40%;
+    margin-top: 2%;
+}
+.additional{
+    height: 45%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.additional div{
+    flex: 8;
+    height: 50%;
+
+    display: flex;
+    flex-direction: row;
+}
+.link_icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 0.5vw;
+    padding: 10px;
+    width: 2.5vw;
+    height: 5vh;
+    border-radius: 30px;
+}
+.link_icon:hover{
+    background-color: var(--twitter-select);
+    cursor: pointer;
+}
+.iconBoxItem{
+    width: 1.5vw;
+    color: var(--twitter-color);
+}
+.additional button{
+    flex: 2;
+    margin-right: 2.5%;
+
+    height: 70%;
+    border-radius: 50px;
+
+    background-color: var(--twitter-color);
+    color: var(--white);
+    border: none;
+    font-size: 18px;
+}
+
+/*  A FAIRE : TERMINER LE FEDD*/
+.feed{
+    overflow: scroll;
+    overflow-y:unset;
+    scrollbar-width: none;
+}
+
+
+
+/* STYLE DE LA PARTIE DROITE */
+
+.second{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2vw;
+    margin-top: 5vh;
+    height: 100%;
+}
+
+.searcherWidget{
+    width: 100%;
+    height: 6.5vh;
+    background-color: var(--twitter-dark-background);
+
+    margin-bottom: 3vh;
+    border-radius: 25px;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.searcherWidget button img{
+    margin-left: 1vw;
+    width: 1.5vw;
+}
+.searcherWidget button{
+    border: none;
+    background: none;
+}
+.searcherWidget button:hover{
+    cursor: pointer;
+}
+.searcherWidget input{
+    background-color: var(--twitter-dark-background);
+    border: none ;
+    font-size: 18px;
+    font-family: 'chirpmedium';
+    margin-left: 0.5vw;
+}
+
+
+
+
+.cardWidget{
+    border-radius:15px;
+    background-color: var(--twitter-dark-background);
+    padding: 5%;
+    max-width: 100%;
+    width: 100%;
+    color: var(--white);
+}
+.PremiumPlus h1{
+    font-family: 'chirpbold';
+
+}
+.PremiumPlus p{
+    font-family: 'chirpregular';
+    margin: 15px 0;
+}
+.PremiumPlus button{
+    padding: 7.5px 20px;
+    background-color: var(--twitter-color);
+    color: var(--white);
+
+    border: none;
+    border-radius: 25px;
+
+    font-family: 'chirpbold';
+    font-size: 16px;
+}
+
+.widthSeparator{
+    background-color: var(--twitter-select);
+    margin: 15px 10px;
+    width: 97.5%;
+    height: 1px;
+}
+
+.suggs{
+    width: 99%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+.suggs img{
+    width: 3vw;
+    border-radius: 25px;
+    margin-right: 10px;
+}
+.followBtn{
+    padding: 7.5px 20px;
+
+    background-color: var(--white);
+    color: var(--twitter-dark-background);
+
+    border: none;
+    border-radius: 25px;
+
+    font-family: 'chirpmedium';
+    font-size: 16px;
+}
+div.username{
+    width: 60%;
+}
+.username .usrname{
+    font-family: 'chirpbold';
+    font-size: 16px;
+}
+.username .arobase{
+    font-family: 'chirpregular';
+    font-size: 16px;
+    color: var(--light-grey);
+}
+
+/* Partie page d'acceuil */
+.headerProfile{
+    height: 10vh;
+    width: 100%;
+
+
+    border-bottom: var(--twitter-select) solid 1px;
+    color: var(--white);
+}
+.headerProfile div.child{
+    margin-left: 2vw;
+}
+.headerProfile h1, .userInfo .name{
+    font-size: 24px;
+
+}
+.headerProfile h1{
+    margin: 10px 0 5px 0;
+}
+.headerProfile p, .userInfo .username{
+    color: var(--light-grey);
+    font-family: 'chirpregular';
+}
+.regular-font{
+    font-family: 'chirpregular';
+}
+
+aside.second{
+    
+    overflow:visible;
+}
+.bannerProfile{
+    width: 100%;
+    height: 32.5vh;
+    overflow: hidden;
+    /**background-color: var(--twitter-color);
+*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.bannerProfile img{
+    width: 100%;
+}
+.profilePP img{
+    width: 10vw;
+    border-radius: 100px;
+}
+
+.profilePP{
+    position: absolute;
+    top: 200px;
+    left: 25px;
+
+    width: fit-content;
+    height: fit-content;
+    border-radius: 100px;
+
+    padding: 5px;
+    background-color: var(--twitter-background);
+
+}
+.editProdile{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-bottom: 35px;
+}
+.editProdile button, .logout{
+    color: var(--white);
+    background-color: var(--twitter-background);
+
+    border: 1px solid var(--white);
+    border-radius: 100px;
+
+    margin: 10px 10px 0 0;
+    padding: 7.5px 20px;
+    font-size: 16px;
+}
+
+.editProdile .logout{
+    color: var(--white);
+    background-color: red;
+
+    border: none;
+    border-radius: 100px;
+
+    margin: 10px 10px 0 0;
+    padding: 7.5px 20px;
+    font-size: 16px;
+}
+.editProdile button:hover, .logout:hover{
+    cursor: pointer;
+}
+.editProdile a{
+    text-decoration: none;
+    font-family: 'chirpbold';
+}
+
+.bannerInfo{
+    color: var(--white);
+    padding: 0 15px;
+}
+.descr{
+    width: 50%;
+    margin-top: 15px;
+}
+
+.linkedOption{
+    display: flex;
+    align-items: center;
+
+    margin-top: 15px;
+}
+.linkedOption p, .flwers{
+    color: var(--light-grey);
+    font-family: 'chirpregular';
+}
+.linkedOption img{
+    width: 1vw;
+}
+.flwers-contain{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    
+    width: 40%;
+    margin-top: 10px;
+}
+.flwers span{
+    color: var(--white);
+}
+
+.nav-profile{
+    border-bottom: 1px solid var(--light-grey);
+    color: var(--light-grey);
+    font-family: 'chirpregular';
+
+    padding: 0 10px;
+
+    height: 7.5vh;
+    margin-top: 5vh;
+
+    display: flex;
+    flex-direction: row;
+}
+.nav-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+.nav-item:hover, .nav-item p:hover{
+    background-color: var(--twitter-dark-background);
+    cursor: pointer;
+}
+.nav-item p{
+    font-family: 'chirpregular';
+}
+.nav-item p.active{
+    color: var(--white);
+    font-family: 'chirpbold';
+}

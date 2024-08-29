@@ -1,0 +1,61 @@
+@import url('../font/webkit/stylesheet.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'chirpbold';
+
+}
+
+body{
+    --twitter-color: #1d9bf0;
+    --twitter-background: #000000;
+    --twitter-select:#333333;
+    --white : white;
+    --light-grey:#71767b;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.main{
+    background-color: var(--twitter-background);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 100vh;
+}
+
+.error_404{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+.error_404 *{
+    margin-top: 10px;
+}
+
+button, a{
+    padding: 10px 20%;
+    background-color: var(--twitter-color);
+    border-radius: 50px;
+    border: none;
+    font-size: 18px;
+    color: white;
+}
+button:hover, a:hover{
+    cursor: pointer;
+}
+
+.error_404 h4{
+    color: var(--light-grey);
+    font-family: 'chirpregular';
+}
+
+.error_404 img{
+    width: 10vw;
+}

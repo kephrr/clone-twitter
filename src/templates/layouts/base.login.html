@@ -1,0 +1,47 @@
+{% block stylesheet %}
+    <link rel="stylesheet" href="static/css/styles.css" />
+    <link rel="stylesheet" href="static/css/login.css" />
+{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% block page_title %}
+    <title>Twitter | Connexion</title>
+    {% endblock %}
+</head>
+<body class="context">
+    <form action="/login" method="POST" class="content">
+        <div>
+            {% block img %}
+                <img id="cross" src="static/img/cross-icon.svg" alt="image introuvable">
+            {% endblock %}
+        </div>
+        {% block logo %}
+            <img id="logo" src="static/img/X_logo_2023.png" alt="image introuvable">
+        {% endblock %}
+        <div class="scroll">
+            <div>
+                <h1 class="title white">{% block titre %}Connectez-vous à X {% endblock %}</h1>
+                
+            </div>
+            <div class="main_scroll">
+                <button class="bg-white text-gray">
+                    <img class="icon" src="static/img/google_logo.png" alt="image introuvable">
+                    Se connecter à Google
+                </button>
+                <button class="bg-white text-black">
+                    <img class="icon" src="static/img/apple_logo.png" alt="image introuvable">
+                    Se connecter à Apple
+                </button>
+                <h4 class="white">ou</h4>
+                {% block content %}
+                    
+                {% endblock %}
+            </div>
+        </div>
+    </form>
+</body>
+</html>

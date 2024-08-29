@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% block page_title %}
+    <title>Twitter | Inscription</title>
+    {% endblock %}
+    {% block stylesheet %}
+    <link rel="stylesheet" href="static/css/styles.css" />
+    <link rel="stylesheet" href="static/css/login.css" />
+    {% endblock %}
+</head>
+<body class="context">
+    <form action="/signup" method="POST" class="content">
+        <div>
+            {% block img %}
+                <img id="cross" src="static/img/cross-icon.svg" alt="image introuvable">
+            {% endblock %}
+        </div>
+        {% block logo %}
+            <img id="logo" src="static/img/X_logo_2023.png" alt="image introuvable">
+        {% endblock %}
+        <div class="scroll">
+            <div>
+                <h1 class="title white">{% block titre %}Rejoignez X dès aujourd'hui{% endblock %}</h1>
+                
+            </div>
+            <div class="main_scroll">
+                <button class="bg-white text-gray">
+                    <img class="icon" src="static/img/google_logo.png" alt="image introuvable">
+                    Se connecter à Google
+                </button>
+                <button class="bg-white text-black">
+                    <img class="icon" src="static/img/apple_logo.png" alt="image introuvable">
+                    Se connecter à Apple
+                </button>
+                <h4 class="white">ou</h4>
+                <input class="input" type="text" name="username" id="" placeholder="Votre Nom d'utilisateur ou pseudonyme">
+                <input class="input" type="text" name="name" id="" placeholder="Votre Nom">
+                <input class="input" type="text" name="login" id="" placeholder="Votre adresse-mail">
+                <button type="submit" class="bg-white text-black">
+                    Créer un compte
+                </button>
+                <p>En vous inscrivant, vous acceptez les <a href=""> Conditions d'utilisation</a> et la <a href="">
+                    Politique de confidentialité</a>, notamment l'<a href="">Utilisation des cookies.</a></p>
+                <p>Vous avez déjà un compte ? <a href="{{url_for('login')}}"> Connectez-vous.</a></p>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

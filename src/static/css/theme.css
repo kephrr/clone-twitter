@@ -1,0 +1,162 @@
+@import url('../font/webkit/stylesheet.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'chirpbold';
+
+}
+
+
+
+
+
+.liked{
+    color: #fa052a;
+}
+.retweeted{
+    color: rgb(0, 223, 85);
+}
+body{
+    --twitter-color: #1d9bf0;
+    --twitter-background: #000000;
+    --twitter-select:#333333;
+    --white : white;
+    --light-grey:#71767b;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.main{
+    background-color: var(--twitter-background);
+    display: flex;
+    flex-direction: row;
+
+    position: relative;
+}
+
+#sideBar{
+    width: 8vw;
+    border-right: solid  var(--light-grey) 1px;
+    height: 100vh;
+    flex: start;
+    margin-left: 4.5vw;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+#topSideBar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom : 1vh; 
+    height: 94vh;
+}
+.icon{
+    width: 1.85vw;
+}
+#twitter_logo{
+    width: 2vw;
+}
+#botSideBar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.pp_icon{
+    width:4vw;
+    border-radius: 50%;
+    margin-top: 3vh;
+}
+
+.pp_icon:hover, .icon:hover, #twitter_logo:hover{
+    cursor: pointer;
+}
+
+.sideBarOption{
+    padding: 15px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.sideBarOption:hover{
+    background-color: var(--twitter-select);
+}
+
+
+
+
+
+.active{
+    visibility: visible;
+}
+.hidden{
+    visibility: hidden;
+}
+/*    CARD MORE OPTION   */
+#quitCard{
+    width: 1.5vw;
+    margin-left: 1.8vw;
+    margin-top: 2vh;
+}
+#quitCard:hover{
+    cursor: pointer;
+}
+.card{
+    width: auto;
+    height: fit-content;
+    border: solid var(--light-grey)  1px;
+    border-radius: 5%;
+    box-shadow: 0px 0px 10px var(--twitter-select);
+
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: var(--twitter-background);
+    margin: 29.5vh 0 0 5vw;
+}
+.card-mo-last{
+    border-bottom-right-radius : 10%;
+    border-bottom-left-radius: 10%;
+}
+
+.cardMoreOption h4{
+    font-size: 24px;
+    color: var(--white);
+    margin-left: 25px;
+}
+.cardMoreOption{
+    display: flex;
+    padding: 20px 20px;
+}
+.cardMoreOption:hover{
+    background-color: var(--twitter-select);
+    cursor: pointer;
+}
+
+#content{
+    display: flex;
+    flex-direction: row;
+    width: 92vw;
+
+}
+
+
+.cardTweet{
+    position: absolute;
+    width: 30vw;
+    height: 30vh;
+    background-color:#fa052a;
+}
+
+.tweetButton:hover{
+    cursor: pointer;
+}
+

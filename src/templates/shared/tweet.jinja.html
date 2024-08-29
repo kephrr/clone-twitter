@@ -1,0 +1,53 @@
+
+{% block ownCss %}
+      <link rel="stylesheet" href="../../static/css/tweet.css">
+{% endblock %}
+
+{% block content %}
+
+<div class="cardTweetType" >
+      <div>
+        {% if item['pp_url']!=''  %}
+        <img class="profilePic" src="{{item['pp_url']}}" alt="">
+        {% else  %}
+        <img class="profilePic" src="../../static/img/no_pp.png" alt="">
+        {% endif  %}
+      </div>
+      <div class="content">
+          <div class="tweet_user">
+                  <h3>{{item['name']}}</h3>
+                  
+                  <a class="pseudo" href="{{url_for('account', id=item['id_user'])}}">@{{item['username']}}</a>
+                  <p>-</p>
+                  <p>{{item['date']}}</p>
+          </div>
+          <p class="textContent">{{item['tweet_content']}}</p>
+          {% if item['img_url']!='' %}
+          <img class="imgContent" src="" alt="">
+          {% endif  %}
+          <div class="actions">
+              <div>
+                  <p></p>
+                  <a href="{{url_for('tweet_details', id=item['id_tweet'])}}">
+                    <img src="../../static/img/icons8-comment-144.png" alt="">
+
+                  </a>
+              </div>
+              <div>
+                  <p></p>
+                  <img class="like" src="../../static/img/unliked_icon.svg" alt="">
+              </div>
+              <div>
+                  <p></p>
+                  <img class="retweet" src="../../static/img/icons8-retweet-48.png" alt="">
+              </div>
+              <div>
+                  <p></p>
+                  <img class="bookmark" src="../../static/img/bookmark_icon.svg" alt="">
+              </div>
+              <img src="../../static/img/icons8-upload-64 (1).png" alt="">
+          </div>
+      </div>
+  </div>
+
+{% endblock %}

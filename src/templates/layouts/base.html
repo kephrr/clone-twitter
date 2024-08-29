@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitter | Home Page</title>
+  <link rel="stylesheet" href="../../static/css/theme.css">
+  {% block ownCss %}
+  {% endblock %}
+</head>
+<body class="main">
+  
+  </div>
+    <aside id="sideBar">
+      
+      <div id="topSideBar">
+        <div class="">
+          <img class="unactive" id="twitter_logo" src="../../static/img/X_logo_2023.png" alt="image introuvable">
+        </div>
+        <a href="/home" class="sideBarOption">
+          <img class="active icon" src="../../static/img/home_focus_icon.png" alt="image introuvable">
+        </a>
+        <a href="/search" class="sideBarOption">
+          <img class="unactive icon" src="../../static/img/search_icon.png" alt="image introuvable">
+        </a>
+        <a class="sideBarOption">
+          <img class="unactive icon" src="../../static/img/bell_icon.png" alt="image introuvable">
+        </a>
+        <a class="sideBarOption">
+          <img class="unactive icon" src="../../static/img/message_icon.png" alt="image introuvable">
+        </a>
+        <a class="sideBarOption">
+          <img class="unactive icon" src="../../static/img/X_logo_2023.png" alt="image introuvable">
+        </a>
+        <a class="sideBarOption">
+          <img class="unactive icon" src="../../static/img/list_icon.svg" alt="image introuvable">
+        </a>
+        <a href="/account" class="sideBarOption">
+          <img class="unactive icon" src="../../static/img/user_icon.png" alt="image introuvable">
+        </a>
+        <a class="sideBarOption" id="btn_more">
+          <img class="unactive icon" src="../../static/img/more_icon.svg" alt="image introuvable">
+        </a>
+      </div>
+      <div id="botSideBar">
+        <img id="new-tweet" src="../../static/img/feather.jpg" alt="image introuvable" class="pp_icon">
+        {% block profile %}
+        <img src="../../static/img/no_pp.png" alt="image introuvable" class="pp_icon">
+        {% endblock%}
+      </div>
+    </aside>
+
+    <!---  CARD MORE --->
+      <div id="more" class="card more hidden">
+        <img id="quitCard"  src="../../static/img/cross-icon.svg" alt="">
+        <div class="cardMoreOption card-mo-first">
+          <img class="icon" src="../../static/img/bookmark_icon.svg" alt="">
+          <h4>Signets</h4>
+        </div>
+        <div class="cardMoreOption">
+          <img class="icon" src="../../static/img/bill_icon.svg" alt="">
+          <h4>Monétisation</h4>
+        </div>
+        <div class="cardMoreOption">
+          <img class="icon" src="../../static/img/lightning_icon.svg" alt="">
+          <h4>Organisations certifiées</h4>
+        </div>
+        <div class="cardMoreOption">
+          <img class="icon" src="../../static/img/temple_icon.svg" alt="">
+          <h4>Pro</h4>
+        </div>
+        <div class="cardMoreOption">
+          <img class="icon" src="../../static/img/ad_icon.svg" alt="">
+          <h4>Publicités</h4>
+        </div>
+        <div class="cardMoreOption card-mo-last">
+          <img class="icon" src="../../static/img/setting_icon.svg" alt="">
+          <h4>Paramètres de confidentialité</h4>
+        </div>
+      </div>
+    <!---  CARD NEW TWEET --->
+      <div>
+
+      </div>
+
+    <aside id="content">
+      {% block content %}
+
+      {% endblock %}
+    </aside>
+  
+  <script src="../../static/js/base.js"></script>
+</body>
+</html>

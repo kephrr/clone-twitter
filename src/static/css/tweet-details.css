@@ -1,0 +1,174 @@
+@import url('../font/webkit/stylesheet.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'chirpbold';
+    color: white;
+    --twitter-color: #1d9bf0;
+    --twitter-dark-background:#16181c;
+    --twitter-background: #000000;
+    --twitter-select:#333333;
+    --white : white;
+    --light-grey:#71767b;
+}
+
+
+.pseudo:hover{
+    cursor: pointer;
+}
+.cardTweetType{
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5%;
+
+    height: fit-content;
+}
+
+
+.post{
+    display: flex;
+    flex-direction: row;
+    padding: 15px 0 15px 10px;
+    font-size: 22px;
+}
+.post img{
+    width: 30px;
+    margin-right: 20px;
+}
+.post img:hover{
+    cursor: pointer;
+}
+
+.profilePic{
+    width: 4vw;
+    border-radius: 30px;
+    height: auto;
+}
+
+.fullname{
+    display: flex;
+    flex-direction: row;
+    justify-content:start;
+    align-items: center;
+}
+.tweet_user{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    font-size: 18px;
+}
+.tweet_user p ,a{
+    margin-left: 2.5px;
+    color: gray;
+    font-family: 'chirpregular';
+}
+.username{
+    display: flex;
+    flex-direction: row;
+}
+.username img{
+    width: 1.7vw;
+    height: auto;
+    margin-left: 5px;
+}
+
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    width: 80%;
+}
+.content p{
+    margin: 15px 0 15px 2.5px;
+    color: gray;
+    font-family: 'chirpregular';
+    font-size: 16px;
+}
+.textContent, p.textContent{
+    margin: 10px 0 0 0;
+    font-family: 'chirpregular';
+    font-size: 20px;
+    line-height: 24px;
+    color: white;
+}
+
+.actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px 0;
+    height: 50px;
+}
+.actions p {
+
+    margin: 0;
+    
+
+}
+.actions img:hover{
+    cursor: pointer;
+}
+
+.actions img{
+   width: 25px;
+   margin: 10px 0;
+}
+
+.actions-detail{
+    border: 1px solid gray;
+    border-right: none;
+    border-left: none;
+    width: 50vw;
+}
+
+
+.user_typing{
+    height: 45%;
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px gray;
+}
+.user_typing input{
+    font-family: 'chirpmedium';
+
+    font-size: 20px;
+
+    background-color: var(--twitter-background);
+    border: none;
+    outline: none;
+
+    width: 80%;
+    margin-left: 10px;
+}
+.user_typing button{
+    margin-right: 2.5%;
+    padding: 8px 16px;
+
+    height: 70%;
+    border-radius: 50px;
+
+    background-color: var(--twitter-color);
+    color: var(--white);
+    border: none;
+    font-size: 18px;
+}
+.user_typing button:hover{
+    cursor: pointer;
+}
+
+.text-white{
+    color: var(--white);
+}
+.text-grey{
+    color: var(--light-grey);
+}

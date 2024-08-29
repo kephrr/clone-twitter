@@ -1,0 +1,84 @@
+{% extends "layouts/base.html" %}
+
+{% block ownCss %}
+    <link rel="stylesheet" href="../../static/css/tweet.css">
+    <link rel="stylesheet" href="../../static/css/search.css">
+{% endblock %}
+
+{% block content %}
+    <aside class="side feed">
+        <div class="topBar">
+            <form class="searcherWidget" method="post" action="/search">
+                <button type="submit">
+                    <img src="../../static/img/search_icon.png" alt="">
+                </button>
+                <input name="filter" type="text" placeholder="Rechercher">
+            </form>
+            <div class="topBarOp">
+                <div id="optionTopBar" class="">
+                    <div id="actual" class="onglet">
+                        <p href="" class="optionPage">Tweets</p>
+                    </div>
+                    <div id="unactual" class="onglet">
+                        <p href="" class="optionPage">Personnes</p>
+                    </div>
+                    <div id="unactual" class="onglet">
+                        <p href="" class="optionPage">Récents</p>
+                    </div>
+                </div>
+                <div  id="settingShortcut">
+                    <img src="../../static/img/setting_icon.svg" alt="réglages">
+                </div>
+            </div>
+        </div>
+
+            <div id="spacer"></div>
+
+            {% for item in tweets %}
+                {% include "shared/tweet.jinja.html" %} 
+            {%endfor%}
+
+    </aside>
+    <aside class="side second">
+
+        <div class="cardWidget PremiumPlus">
+            <h1>Passer à Premium+</h1>
+            <p>Profitez d'avantages supplémentaires tels que l'absence de publicités dans vos fils Pour vous et vos Abonnements et la priorisation des réponses la plus importante. </p>
+            <button>Passer à Premium+</button>
+        </div>
+        <div class="widthSeparator"></div>
+        <div class="cardWidget Suggestions">
+            <h1>Suggestions </h1>
+            
+            <!---- 
+            <div class="suggs">
+                <img src="../../static/img/no_pp.png" alt="">
+                <div class="username">
+                    <p class="usrname">Username</p>
+                    <p class="arobase">@pseudo</p>
+                </div>
+                <button class="followBtn">Suivre</button>
+            </div>
+            --->
+            {% for user in users %}
+                <div class="suggs">
+                    <img src="{{user['pp_url']}}" alt="">
+                    <div class="username">
+                        <p class="usrname">  {{user['name']}}  </p>
+                        <p class="arobase">  @{{user['username']}} </p>
+                    </div>
+                    <button class="followBtn">Suivre</button>
+                </div>
+            {% endfor %}
+        </div>
+
+    </aside>
+
+
+{% endblock %}
+
+{% if current_user['pp_url']!= null %}
+    {% block profile %}
+        <img src="{{current_user['pp_url']}}" alt="image introuvable" class="pp_icon">
+    {% endblock%}
+{% endif %}

@@ -1,0 +1,84 @@
+@import url('../font/webkit/stylesheet.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'chirpbold';
+    color: white;
+}
+
+
+.pseudo:hover{
+    cursor: pointer;
+}
+.cardTweetType{
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    padding: 1.5%;
+    border-bottom: solid 1px gray;
+    height: fit-content;
+}
+
+.cardTweetType:hover{
+    background-color: rgb(10, 10, 10);
+}
+
+.profilePic{
+    width: 3vw;
+    border-radius: 25px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    width: 80%;
+}
+
+.tweet_user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+}
+.tweet_user img{
+    width: 1.7vw;
+    height: auto;
+    margin-left: 5px;
+}
+.tweet_user p ,a{
+    margin-left: 2.5px;
+    color: gray;
+    font-family: 'chirpregular';
+}
+.tweet_user a{
+    margin-left: 7.5px;
+}
+.imgContent, .textContent{
+    width: 96.5%;
+}
+.textContent{
+    margin: 5px 0;
+    font-family: 'chirpregular';
+}
+.imgContent{
+    border-radius: 10px;
+}
+
+.actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px 0;
+    height: 20px;
+    width: auto;
+}
+.actions:hover{
+    cursor: pointer;
+}
+
+.actions img{
+   width: 20px;
+}

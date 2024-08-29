@@ -1,0 +1,82 @@
+<style>
+    .comment{
+        width: 100%;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5%;
+        border-bottom: solid 1px gray;
+        height: fit-content;
+    }
+    .comment-main{
+        display: flex;
+        flex-direction: row;
+    }
+    .col1{
+    flex: 1;
+    }
+    .col2{
+    flex: 8;
+    }
+
+    .acts{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: auto;
+    }
+    .acts p {
+        margin: 0;
+    }
+    .acts img:hover{
+        cursor: pointer;
+    }
+    .acts img{
+       width: 25px;
+    }
+    
+    .textComment{
+        margin: 10px 0 0 0;
+        font-family: 'chirpregular';
+        font-size: 16px;
+        line-height: 24px;
+        color: white;
+    }
+</style>
+<div class="comment" >
+    <div class="comment-main">
+        <div class="col1"> 
+            {% if item['pp_url']!=''  %}
+            <img class="profilePic" src="{{item['pp_url']}}" alt="">
+            {% else  %}
+            <img class="profilePic" src="../../static/img/no_pp.png" alt="">
+            {% endif  %}
+        </div>
+
+        <div class="comment-content col2">
+            <h3>{{item['name']}}</h3>
+            <a class="pseudo" href="{{url_for('account', id=item['id_user'])}}">@{{item['username']}}</a>
+            <p class="textComment">{{item['content']}}</p>
+            {% if item['img_url']!='' %}
+            <img class="imgContent" src="" alt="">
+            {% endif  %}
+        </div>
+    </div>
+
+    <div class="acts">
+        <div>
+            <p></p>
+            <img class="like" src="../../static/img/unliked_icon.svg" alt="">
+        </div>
+        <div>
+            <p></p>
+            <img class="retweet" src="../../static/img/icons8-retweet-48.png" alt="">
+        </div>
+        <div>
+            <p></p>
+            <img class="bookmark" src="../../static/img/bookmark_icon.svg" alt="">
+        </div>
+        <img src="../../static/img/icons8-upload-64 (1).png" alt="">
+    </div>
+
+</div>

@@ -1,0 +1,117 @@
+{% extends "layouts/base.html" %}
+
+{% block ownCss %}
+    <link rel="stylesheet" href="../../static/css/home.css">
+    <link rel="stylesheet" href="../../static/css/account.css">
+{% endblock %}
+
+{% block content %}
+    <aside class="side feed">
+        <div class="headerProfile">
+            <div class="child"> </div>
+            <div class="child">
+                <h1>{{current_user['name']}}</h1>
+                <p class="regular-font">2088 posts</p>
+            </div>
+        </div>
+        <div class="bannerDiv">
+            <div class="bannerProfile">
+                <img src="../../static/img/banner.png" alt="">
+            </div>
+            <div class="profilePP">
+                {% if current_user['pp_url']!='' %}
+                <img class="profilePic" src="{{current_user['pp_url']}}" alt="">
+                {% else  %}
+                <img class="profilePic" src="../../static/img/no_pp.png" alt="">
+                {% endif  %}
+            </div>
+            <div class="editProdile">
+                <button>Éditer le profil</button>
+                <a href="/logout" class="logout">Déconnexion</a>
+            </div>
+        </div>
+        <div class="bannerInfo">
+            <div class="userInfo">
+                <p class="name">{{current_user['name']}}</p>
+                <p class="username regular-font">@{{current_user['username']}}</p>
+            </div>
+            <p class="regular-font descr">Voici ma description ! Je suis sur Twitter depuis pas très longtemps</p>
+            <div class="linked">
+                <div class="linkedOption">
+                    <img src="../../static/img/marker.png" alt="">
+                    <p>Localisation</p>
+                </div>
+            </div>
+            <div class="flwers-contain">
+                <p class="flwers" ><span>300</span>  Abonnements</p>
+                <p class="flwers" ><span>400</span> Abonnés</p>
+            </div>
+        </div>
+        <div class="nav-profile">
+            <div class="nav-item active">
+                <p class="" id="tweets">Tweets</p>
+            </div>
+            <div class="nav-item">
+                <p>Réponses</p>
+            </div>
+            <div class="nav-item">
+                <p>Tweets marquants</p>
+            </div>
+            <div class="nav-item">
+                <p>Médias</p>
+            </div>
+            <div class="nav-item">
+                <p>J'aime</p>
+            </div>
+        </div>
+        {% for item in tweets %}
+        {% include "shared/tweet.jinja.html" %}
+        {%endfor%}
+    </aside>
+
+    <aside class="side second">
+        <form class="searcherWidget" method="post" action="/search/user">
+            <button type="submit">
+                <img src="../../static/img/search_icon.png" alt="">
+            </button>
+            <input name="filter" type="text" placeholder="Rechercher sur X">
+        </form>
+        <div class="cardWidget PremiumPlus">
+            <h1>Passer à Premium+</h1>
+            <p>Profitez d'avantages supplémentaires tels que l'absence de publicités dans vos fils Pour vous et vos Abonnements et la priorisation des réponses la plus importante. </p>
+            <button>Passer à Premium+</button>
+        </div>
+        <div class="widthSeparator"></div>
+        <div class="cardWidget Suggestions">
+            <h1>Tendances pour vous</h1>
+            
+            <!---- 
+            <div class="suggs">
+                <img src="../../static/img/no_pp.png" alt="">
+                <div class="username">
+                    <p class="usrname">Username</p>
+                    <p class="arobase">@pseudo</p>
+                </div>
+                <button class="followBtn">Suivre</button>
+            </div>
+            --->
+            {% for user in users %}
+                <div class="suggs">
+                    <img src="{{user['pp_url']}}" alt="">
+                    <div class="username">
+                        <p class="usrname">  {{user['name']}}  </p>
+                        <p class="arobase">  @{{user['username']}} </p>
+                    </div>
+                    <button class="followBtn">Suivre</button>
+                </div>
+            {% endfor %}
+        </div>
+
+    </aside>
+{% endblock %}
+
+{% if current_user['pp_url']!= null %}
+    {% block profile %}
+        <img src="{{current_user['pp_url']}}" alt="image introuvable" class="pp_icon">
+    {% endblock%}
+{% endif %}
